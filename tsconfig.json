@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    // 编译成js版本, 因为有babel兜底，加上我们需要用到es6+的特性，这个target版本用最新的
+    "target": "ESNext",
+    // 允许编译js ts文件引入js模块
+    "allowJs": true,
+    // 跳过d.ts声明文件的类型检查
+    "skipLibCheck": true,
+    // 允许import没有default export的模块(如 react)
+    "allowSyntheticDefaultImports": true,
+    // 导入要和文件名一致，区分大小写，比如macos不区文件名大小写 linux区分
+    "forceConsistentCasingInFileNames": true,
+    // 导出的模块es模块
+    "module": "commonjs",
+    // 模块作用机制 node, 比如import的时候node会先去找node_modules
+    "moduleResolution": "node",
+    // import json文件
+    "resolveJsonModule": true,
+    // 文件都要是一个模块 有export
+    "isolatedModules": true,
+    // 不输出js
+    "noEmit": true,
+  },
+  "exclude": [
+    "./src/out/**/*",
+    "./src/template/**/*",
+  ],
+  "ts-node": {
+    "files": true // 增加这一条配置即可，其他同默认配置
+  },
+}
